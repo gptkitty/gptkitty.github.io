@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Story Finder</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to User Story Finder</h1>
+    </header>
+    <main>
+        <div id="filters">
+            <button class="filter-btn" data-filter="Account Management">Account Management</button>
+            <button class="filter-btn" data-filter="Authentication">Authentication</button>            
+            <button class="filter-btn" data-filter="Notifications">Notifications</button>
+            <button class="filter-btn" data-filter="Search & Browse">Search & Browse</button>
+            <button class="filter-btn" data-filter="Payments">Payments</button>
+            <button class="filter-btn" data-filter="User Roles">User Roles</button>
+            <button id="clearFilter">Clear Results</button>
+            <!-- More filter buttons -->
+        </div>
+        <input type="text" id="searchBox" placeholder="Search user stories...">
+        <div id="results"></div>
+    </main>
+    <footer>
+        <p>© 2023 User Story Finder</p>
+    </footer>
+    <script type="module" src="search.js"></script>
+
+</body>
+</html>
