@@ -70,10 +70,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listener for search box input
     searchBox.addEventListener('input', function() {
-        const searchTerm = searchBox.value.toLowerCase();
-        const filteredStories = searchTerm ? userStories.filter(storyObj => storyObj.story.toLowerCase().includes(searchTerm)) : userStories;
-        updateResults(filteredStories);
-    });
+    const searchTerm = searchBox.value.toLowerCase();
+
+    // Updated filter to include title, story, and category
+    const filteredStories = userStories.filter(storyObj => 
+        storyObj.title.toLowerCase().includes(searchTerm) ||
+        storyObj.story.toLowerCase().includes(searchTerm) ||
+        storyObj.category.toLowerCase().includes(searchTerm)
+    );
+
+    updateResults(filteredStories);
+});
 
     // Event listeners for filter buttons
     const filterButtons = document.querySelectorAll('.filter-btn');
