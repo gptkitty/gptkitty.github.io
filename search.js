@@ -1,23 +1,18 @@
-// In your main script file
+// Import user stories
 import userStories from './userStories.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const searchBox = document.getElementById('searchBox');
     const results = document.getElementById('results');
     const clearFilterButton = document.getElementById('clearFilter');
-    clearFilterButton.addEventListener('click', function() {
-        // Reset the search box
-        searchBox.value = '';
 
-        // Reset the results to show all stories
-        results.innerHTML = '';
-        userStories.forEach(story => {
-            const div = document.createElement('div');
-            div.classList.add('result-item');
-            div.textContent = story.story; // Remember to access the 'story' property
-            // ... Rest of the code to append the story and add click event ...
-        });
+    // Clear filter button event
+    clearFilterButton.addEventListener('click', function() {
+        searchBox.value = ''; // Reset the search box
+        updateResults(userStories); // Show all stories
     });
+
+    // Function to update search results
     const updateResults = (stories) => {
         results.innerHTML = '';
         stories.forEach(storyObj => {
@@ -39,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             categoryBadge.textContent = storyObj.category;
             card.appendChild(categoryBadge);
 
+            // Click event to copy story
             card.addEventListener('click', function() {
                 if (navigator.clipboard) {
                     navigator.clipboard.writeText(storyObj.story).then(() => {
@@ -62,39 +58,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
+    // Function to show toast notification
     function showToast(message) {
         const toast = document.getElementById('toast');
         toast.textContent = message;
         toast.classList.remove('hidden');
-
         setTimeout(() => {
             toast.classList.add('hidden');
         }, 3000); // Toast disappears after 3 seconds
     }
 
-
-
-
+    // Event listener for search box input
     searchBox.addEventListener('input', function() {
         const searchTerm = searchBox.value.toLowerCase();
-        if (searchTerm) {
-            const filteredStories = userStories.filter(storyObj => storyObj.story.toLowerCase().includes(searchTerm));
-            updateResults(filteredStories);
-        } else {
-            // If search box is empty, clear the results
-            results.innerHTML = '';
-        }
+        const filteredStories = searchTerm ? userStories.filter(storyObj => storyObj.story.toLowerCase().includes(searchTerm)) : userStories;
+        updateResults(filteredStories);
     });
 
+    // Event listeners for filter buttons
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
-            console.log(`Filter selected: ${filter}`); // Debugging line
-
             const filteredStories = userStories.filter(storyObj => storyObj.category === filter);
-            console.log(`Filtered stories:`, filteredStories); // Debugging line
-
             updateResults(filteredStories);
         });
     });
