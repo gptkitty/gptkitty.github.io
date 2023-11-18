@@ -63,7 +63,11 @@ document.addEventListener('DOMContentLoaded', function() {
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
+            console.log(`Filter selected: ${filter}`); // Debugging line
+
             const filteredStories = userStories.filter(storyObj => storyObj.category === filter);
+            console.log(`Filtered stories:`, filteredStories); // Debugging line
+
             updateResults(filteredStories);
         });
     });
