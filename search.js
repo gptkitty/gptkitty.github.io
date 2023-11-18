@@ -56,27 +56,40 @@ document.addEventListener('DOMContentLoaded', function() {
             </svg>`;
             card.appendChild(copyIcon);
 
-            card.addEventListener('click', function() {
-                // Format the copied text including the title, formatted story, and placeholders for acceptance criteria
-                const markdownText = `${storyObj.title}\n\n${formatStory(storyObj.story)}\n\n---\n\n**Acceptance Criteria:**\n\nScenario: \n\`\`\`\nGiven\nWhen\nThen\n\`\`\`\n\nNotes:`;
+// Helper function to format the story
+function formatStory(story) {
+    let parts = story.match(/As an? (.*), (I want|I need) (.+) so that (.+)/);
+    if (parts && parts.length === 5) {
+        // Include the role in the formatted text
+        return `As a ${parts[1]},\n${parts[2]} ${parts[3]}\nso that ${parts[4]}`;
+    } else {
+        // If the story doesn't match the expected pattern, return it as is
+        return story;
+    }
+}
 
-                if (navigator.clipboard) {
-                    navigator.clipboard.writeText(markdownText).then(() => {
-                        showToast('Story copied to clipboard!');
-                    }, (err) => {
-                        console.error('Could not copy text: ', err);
-                    });
-                } else {
-                    // Fallback method for older browsers
-                    const textarea = document.createElement('textarea');
-                    textarea.value = markdownText;
-                    document.body.appendChild(textarea);
-                    textarea.select();
-                    document.execCommand('copy');
-                    textarea.remove();
-                    showToast('Story copied to clipboard! (fallback method)');
-                }
-            });
+        // Event listener for copying story
+        card.addEventListener('click', function() {
+            // Format the copied text including the title, formatted story, and placeholders for acceptance criteria
+            const markdownText = `${storyObj.title}\n\n${formatStory(storyObj.story)}\n\n---\n\n**Acceptance Criteria:**\n\nScenario: \n\`\`\`\nGiven\nWhen\nThen\n\`\`\`\n\nNotes:`;
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(markdownText).then(() => {
+                    showToast('Story copied to clipboard!');
+                }, (err) => {
+                    console.error('Could not copy text: ', err);
+                });
+            } else {
+                // Fallback method for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = markdownText;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                textarea.remove();
+                showToast('Story copied to clipboard! (fallback method)');
+            }
+        });
 
             results.appendChild(card);
         });
