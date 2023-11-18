@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         results.innerHTML = '';
         stories.forEach(storyObj => {
             const card = document.createElement('div');
-            card.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'hover:bg-gray-100', 'cursor-pointer', 'mb-4','relative');
+            card.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'hover:bg-blue-50', 'cursor-pointer', 'mb-4','relative');
 
             const title = document.createElement('h3');
             title.classList.add('text-lg', 'font-bold');
