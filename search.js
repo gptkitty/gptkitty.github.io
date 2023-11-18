@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
             card.appendChild(title);
 
             const content = document.createElement('p');
-            content.classList.add('text-gray-600');
+            content.classList.add('text-gray-600','mt-2','mb-3');
             content.textContent = storyObj.story;
             card.appendChild(content);
 
             const categoryBadge = document.createElement('span');
-            categoryBadge.classList.add('inline-block', 'bg-blue-500', 'text-white', 'px-3', 'py-1', 'text-xs', 'font-semibold', 'rounded-full');
+            categoryBadge.classList.add('inline-block', 'bg-blue-400', 'bg-white-400', 'text-gray-600', 'border-solid', 'border-2', 'border-blue-400', 'px-3', 'py-1', 'text-xs', 'rounded');
             categoryBadge.textContent = storyObj.category;
             card.appendChild(categoryBadge);
 
