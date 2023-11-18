@@ -21,12 +21,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const updateResults = (stories) => {
         results.innerHTML = '';
         stories.forEach(storyObj => {
-            const div = document.createElement('div');
-            // Apply Tailwind classes for styling
-            div.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'hover:bg-gray-100', 'cursor-pointer');
+            const card = document.createElement('div');
+            card.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'hover:bg-gray-100', 'cursor-pointer', 'mb-4');
 
-            div.textContent = storyObj.story;
-            div.addEventListener('click', function() {
+            const title = document.createElement('h3');
+            title.classList.add('text-lg', 'font-bold');
+            title.textContent = storyObj.title;
+            card.appendChild(title);
+
+            const content = document.createElement('p');
+            content.classList.add('text-gray-600');
+            content.textContent = storyObj.story;
+            card.appendChild(content);
+
+            const categoryBadge = document.createElement('span');
+            categoryBadge.classList.add('inline-block', 'bg-blue-500', 'text-white', 'px-3', 'py-1', 'text-xs', 'font-semibold', 'rounded-full');
+            categoryBadge.textContent = storyObj.category;
+            card.appendChild(categoryBadge);
+
+            card.addEventListener('click', function() {
                 if (navigator.clipboard) {
                     navigator.clipboard.writeText(storyObj.story).then(() => {
                         showToast('Story copied to clipboard!');
@@ -45,18 +58,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            function showToast(message) {
-                const toast = document.getElementById('toast');
-                toast.textContent = message;
-                toast.classList.remove('hidden');
-
-                setTimeout(() => {
-                    toast.classList.add('hidden');
-                }, 3000); // Toast disappears after 3 seconds
-            }
-            results.appendChild(div);
+            results.appendChild(card);
         });
     };
+
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.remove('hidden');
+
+        setTimeout(() => {
+            toast.classList.add('hidden');
+        }, 3000); // Toast disappears after 3 seconds
+    }
+
 
 
 
