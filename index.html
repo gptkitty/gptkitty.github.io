@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Backlog Builder</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style type="text/css">
+        .copy-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: none;
+            /* Hidden by default */
+            padding: 0.5rem;
+            /* Adjust padding as needed */
+        }
+
+        /* Show the button when the parent is hovered */
+        .result-item:hover .copy-btn {
+            display: block;
+        }
+    </style>
 </head>
+
 <body class="bg-gray-100">
     <header class="bg-blue-600 text-white text-center p-4">
         <h1 class="text-3xl font-bold">Backlog Builder</h1>
@@ -29,4 +47,5 @@
     </footer>
     <script type="module" src="search.js"></script>
 </body>
+
 </html>
