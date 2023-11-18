@@ -2,30 +2,30 @@
 <html>
 <head>
     <title>Backlog Builder</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Backlog Builder</h1>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 text-white text-center p-4">
+        <h1 class="text-3xl font-bold">Backlog Builder</h1>
     </header>
-    <main>
-        <div id="filters">
-            <button class="filter-btn" data-filter="Account Management">Account Management</button>
-            <button class="filter-btn" data-filter="Authentication">Authentication</button>            
-            <button class="filter-btn" data-filter="Notifications">Notifications</button>
-            <button class="filter-btn" data-filter="Search & Browse">Search & Browse</button>
-            <button class="filter-btn" data-filter="Payments">Payments</button>
-            <button class="filter-btn" data-filter="User Roles">User Roles</button>
-            <button id="clearFilter">Clear Results</button>
-            <!-- More filter buttons -->
+    <main class="p-4">
+        <div id="filters" class="flex flex-wrap gap-2 mb-4">
+            <!-- Updated button classes -->
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-filter="Account Management">Account Management</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-filter="Authentication">Authentication</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-filter="Notifications">Notifications</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-filter="Search & Browse">Search & Browse</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-filter="Payments">Payments</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" data-filter="User Roles">User Roles</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="clearFilter">Clear Results</button>
+            <!-- Repeat for other buttons -->
         </div>
-        <input type="text" id="searchBox" placeholder="Search user stories...">
-        <div id="results"></div>
+        <input type="text" id="searchBox" class="w-full p-2 mb-4 border rounded" placeholder="Search user stories...">
+        <div id="results" class="space-y-4"></div>
     </main>
-    <footer>
+    <footer class="bg-blue-600 text-white text-center p-2 mt-4">
         <p>© 2023 Backlog Builder</p>
     </footer>
     <script type="module" src="search.js"></script>
-
 </body>
 </html>

@@ -19,32 +19,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     const updateResults = (stories) => {
-        results.innerHTML = '';
-        stories.forEach(storyObj => {
-            const div = document.createElement('div');
-            div.classList.add('result-item');
-            div.textContent = storyObj.story;
-            div.addEventListener('click', function() {
-                if (navigator.clipboard) {
-                    navigator.clipboard.writeText(storyObj.story).then(() => {
-                        alert('Story copied to clipboard!');
-                    }, (err) => {
-                        console.error('Could not copy text: ', err);
-                    });
-                } else {
-                    // Fallback method for older browsers
-                    const textarea = document.createElement('textarea');
-                    textarea.value = storyObj.story;
-                    document.body.appendChild(textarea);
-                    textarea.select();
-                    document.execCommand('copy');
-                    textarea.remove();
-                    alert('Story copied to clipboard (fallback method)!');
-                }
-            });
-            results.appendChild(div);
+    results.innerHTML = '';
+    stories.forEach(storyObj => {
+        const div = document.createElement('div');
+        // Apply Tailwind classes for styling
+        div.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'hover:bg-gray-100', 'cursor-pointer');
+
+        div.textContent = storyObj.story;
+        div.addEventListener('click', function() {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(storyObj.story).then(() => {
+                    alert('Story copied to clipboard!');
+                }, (err) => {
+                    console.error('Could not copy text: ', err);
+                });
+            } else {
+                // Fallback method for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = storyObj.story;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                textarea.remove();
+                alert('Story copied to clipboard (fallback method)!');
+            }
         });
-    };
+        results.appendChild(div);
+    });
+};
 
     searchBox.addEventListener('input', function() {
     const searchTerm = searchBox.value.toLowerCase();
