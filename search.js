@@ -77,19 +77,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000); // Toast disappears after 3 seconds
     }
 
-    // Event listener for search box input
-    searchBox.addEventListener('input', function() {
-        const searchTerm = searchBox.value.toLowerCase();
+// Event listener for search box input
+searchBox.addEventListener('input', function() {
+    const searchTerm = searchBox.value.toLowerCase();
 
-        // Updated filter to include title, story, and category
-        const filteredStories = userStories.filter(storyObj =>
-            storyObj.title.toLowerCase().includes(searchTerm) ||
-            storyObj.story.toLowerCase().includes(searchTerm) ||
-            storyObj.category.toLowerCase().includes(searchTerm)
-        );
+    // Check if the search term is empty
+    if (!searchTerm) {
+        results.innerHTML = ''; // Clear results if search box is empty
+        return; // Exit the function early
+    }
 
-        updateResults(filteredStories);
-    });
+    // Updated filter to include title, story, and category
+    const filteredStories = userStories.filter(storyObj =>
+        storyObj.title.toLowerCase().includes(searchTerm) ||
+        storyObj.story.toLowerCase().includes(searchTerm) ||
+        storyObj.category.toLowerCase().includes(searchTerm)
+    );
+
+    updateResults(filteredStories);
+});
 
     // Event listeners for filter buttons
     const filterButtons = document.querySelectorAll('.filter-btn');
