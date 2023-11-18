@@ -45,8 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Click event to copy story
             card.addEventListener('click', function() {
+                const textToCopy = `${storyObj.title}\n\n${storyObj.story}`;
                 if (navigator.clipboard) {
-                    navigator.clipboard.writeText(storyObj.story).then(() => {
+                    navigator.clipboard.writeText(textToCopy).then(() => {
                         showToast('Story copied to clipboard!');
                     }, (err) => {
                         console.error('Could not copy text: ', err);
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     // Fallback method for older browsers
                     const textarea = document.createElement('textarea');
-                    textarea.value = storyObj.story;
+                    textarea.value = textToCopy;
                     document.body.appendChild(textarea);
                     textarea.select();
                     document.execCommand('copy');
@@ -63,8 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            results.appendChild(card);
-        });
     };
 
     // Function to show toast notification
