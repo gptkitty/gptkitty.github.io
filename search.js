@@ -19,44 +19,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     const updateResults = (stories) => {
-    results.innerHTML = '';
-    stories.forEach(storyObj => {
-        const div = document.createElement('div');
-        // Apply Tailwind classes for styling
-        div.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'hover:bg-gray-100', 'cursor-pointer');
+        results.innerHTML = '';
+        stories.forEach(storyObj => {
+            const div = document.createElement('div');
+            // Apply Tailwind classes for styling
+            div.classList.add('bg-white', 'p-4', 'rounded-lg', 'shadow-md', 'hover:bg-gray-100', 'cursor-pointer');
 
-        div.textContent = storyObj.story;
-        div.addEventListener('click', function() {
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(storyObj.story).then(() => {
-                    alert('Story copied to clipboard!');
-                }, (err) => {
-                    console.error('Could not copy text: ', err);
-                });
-            } else {
-                // Fallback method for older browsers
-                const textarea = document.createElement('textarea');
-                textarea.value = storyObj.story;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand('copy');
-                textarea.remove();
-                alert('Story copied to clipboard (fallback method)!');
+            div.textContent = storyObj.story;
+            div.addEventListener('click', function() {
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(storyObj.story).then(() => {
+                        showToast('Story copied to clipboard!');
+                    }, (err) => {
+                        console.error('Could not copy text: ', err);
+                    });
+                } else {
+                    // Fallback method for older browsers
+                    const textarea = document.createElement('textarea');
+                    textarea.value = storyObj.story;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    textarea.remove();
+                    showToast('Story copied to clipboard! (fallback method)');
+                }
+            });
+
+            function showToast(message) {
+                const toast = document.getElementById('toast');
+                toast.textContent = message;
+                toast.classList.remove('hidden');
+
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                }, 3000); // Toast disappears after 3 seconds
             }
+            results.appendChild(div);
         });
-        results.appendChild(div);
-    });
-};
+    };
+
+
 
     searchBox.addEventListener('input', function() {
-    const searchTerm = searchBox.value.toLowerCase();
-    if (searchTerm) {
-        const filteredStories = userStories.filter(storyObj => storyObj.story.toLowerCase().includes(searchTerm));
-        updateResults(filteredStories);
-    } else {
-        // If search box is empty, clear the results
-        results.innerHTML = '';
-    }
+        const searchTerm = searchBox.value.toLowerCase();
+        if (searchTerm) {
+            const filteredStories = userStories.filter(storyObj => storyObj.story.toLowerCase().includes(searchTerm));
+            updateResults(filteredStories);
+        } else {
+            // If search box is empty, clear the results
+            results.innerHTML = '';
+        }
     });
 
     const filterButtons = document.querySelectorAll('.filter-btn');
