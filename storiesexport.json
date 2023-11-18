@@ -1,0 +1,424 @@
+{
+  "userStories": [
+    {
+      "title": "Secure Email and Password Login",
+      "story": "As a user, I want to log in with my email and password so that I can securely access my personal account and manage my personal information.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Social Media Account Login",
+      "story": "As a user, I want to log in using my social media account (e.g., Facebook, Google) so that the login process is easy and speeds up access to the app.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Admin High-Security Login",
+      "story": "As an admin, I need to log in with a higher level of security to access the admin panel so that I can manage the application to ensure its secure and efficient operation.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Stay Logged In Option",
+      "story": "As a returning user, I want the option to remain logged in so that I can avoid the inconvenience of entering my credentials each time I use the app.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Password Reset Functionality",
+      "story": "As a user, I want to reset my password if I forget it so that I can regain access to my account without significant delay.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Strong Password Prompt",
+      "story": "As a user, I want to be prompted to create a strong password so that I can enhance the security of my account.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Change Password Option",
+      "story": "As a user, I want to change my password from my account settings for security reasons so that I can maintain control over my account access.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Admin-Enforced Password Complexity",
+      "story": "As an admin, I need to enforce password complexity requirements so that I can enhance account security and protect user data.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Multi-Factor Authentication Setup",
+      "story": "As a user, I want to set up multi-factor authentication so that I can add an extra layer of security to my account, reducing the risk of unauthorized access.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Admin-Mandated Multi-Factor Authentication",
+      "story": "As an admin, I want to require multi-factor authentication for all users so that I can ensure higher security standards across the platform.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Account Verification via Email or Phone",
+      "story": "As a new user, I want to verify my email address or phone number to activate my account so that I can confirm my identity to enable account functionality.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Admin-Required Account Verification",
+      "story": "As an admin, I need to ensure that all accounts are verified so that I can maintain data integrity and trust in the user base.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Last Account Access Visibility",
+      "story": "As a user, I want to see where and when my account was last accessed so that I can monitor for suspicious activities and protect my account from unauthorized use.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Log Out from All Devices",
+      "story": "As a user, I want to be able to log out from all devices for security purposes so that I can ensure my account remains secure, even if a device is lost or compromised.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Admin Session Termination Capability",
+      "story": "As an admin, I need to be able to terminate any active user sessions if a security breach is suspected so that I can quickly mitigate potential threats and protect user data.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Link/Unlink Social Media Accounts",
+      "story": "As a user, I want to link or unlink my social media accounts with my app account for easier management so that I can streamline my login process and control which data is shared between platforms.",
+      "category": "Authentication"
+    },
+    {
+      "title": "View Linked Social Media Accounts",
+      "story": "As a user, I wish to see which social media accounts are linked to my app account so that I can easily manage my linked accounts and be aware of where my data is being shared.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Account Recovery Security Questions",
+      "story": "As a user, I want to set up security questions to recover my account if I lose access so that I have an alternative method to regain control of my account in case I forget my login details.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Admin Authentication Method Control",
+      "story": "As an admin, I need the option to enable or disable specific authentication methods based on security protocols so that I can ensure the highest level of security and adapt to changing security requirements.",
+      "category": "Authentication"
+    },
+    {
+      "title": "Profile Information Update",
+      "story": "As a user, I want to update my profile information (name, username) so that I can keep my account information current and relevant.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Profile Photo Upload/Change",
+      "story": "As a user, I want to upload or change my profile photo so that I can personalize my account and make it more recognizable to others.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Preferred Name Specification",
+      "story": "As a user, I want to specify a preferred name so that I am addressed in a way that I feel comfortable with, rather than being referred to by my legal name.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Contact Details Update",
+      "story": "As a user, I want to add or update my contact details (email, phone number, address) so that I can ensure accurate communication and effective account recovery if needed.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Email Address Verification/Change",
+      "story": "As a user, I wish to verify or change my email address so that I can ensure it’s correct and my account is secure.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Shipping and Billing Address Management",
+      "story": "As a user, I need to add or edit my shipping and billing address so that I can facilitate accurate and efficient order processing.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Account Privacy Settings Adjustment",
+      "story": "As a user, I want to adjust my account privacy settings so that I can control who can see my profile and activity, maintaining my privacy as per my preference.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Communication Preferences Setting",
+      "story": "As a user, I need to be able to set and change my communication preferences (like email or SMS notifications) so that I can receive updates in a way that suits me best.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Account Activity/History View",
+      "story": "As a user, I want to view my account activity or history so that I can monitor my actions and interactions within the app, staying informed about my usage.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Account Data Download Option",
+      "story": "As a user, I want to be able to download my account data so that I can have a personal backup for review and keep a record of my data.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Account Deactivation Option",
+      "story": "As a user, I want to deactivate my account temporarily so that I can preserve my data for future use without permanently losing my account information.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Permanent Account Deletion",
+      "story": "As a user, I want to permanently delete my account and all its associated data so that I can maintain my privacy and data security if I no longer wish to use the service.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Link/Unlink Additional Social Media Accounts",
+      "story": "As a user, I want to link or unlink other social media accounts to my main account so that I can have easier access and integration across platforms.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Language Preference Setting",
+      "story": "As a user, I wish to set up or change language preferences so that I can use the application in my preferred language, making it more accessible and personalized for me.",
+      "category": "Account Management"
+    },
+    {
+      "title": "Push Notification Enable/Disable",
+      "story": "As a user, I want to enable or disable push notifications so that I can control when I receive updates and maintain my desired level of engagement with the app.",
+      "category": "Notifications"
+    },
+    {
+      "title": "Alert Type Preferences",
+      "story": "As a user, I wish to set preferences for different types of alerts so that I can receive only communications that are relevant and important to me.",
+      "category": "Notifications"
+    },
+    {
+      "title": "Notification Frequency Customization",
+      "story": "As a user, I want to customize the frequency of notifications so that I can avoid being overwhelmed by too many alerts and maintain a balance in the notifications I receive.",
+      "category": "Notifications"
+    },
+    {
+      "title": "Admin Default Notification Settings",
+      "story": "As an admin, I need to set default notification settings for new users so that they are adequately informed without requiring initial setup, enhancing their first-time experience.",
+      "category": "Notifications"
+    },
+    {
+      "title": "Important Account Activity Push Notifications",
+      "story": "As a user, I want to receive push notifications about important account activity so that I can stay informed and responsive to changes or updates in my account status.",
+      "category": "Notifications"
+    },
+    {
+      "title": "Personalized Offers Push Notifications",
+      "story": "As a user, I want to receive push notifications for special offers and promotions tailored to my interests so that I don't miss out on deals that are relevant to me.",
+      "category": "Notifications"
+    },
+    {
+      "title": "Security Alert Email Notifications",
+      "story": "As a user, I want to receive email notifications for password changes or security alerts related to my account so that I can be immediately aware of and respond to potential security issues.",
+      "category": "Notifications"
+    },
+    {
+      "title": "Marketing Email Opt-In/Out",
+      "story": "As a user, I want to opt into or out of marketing emails from within my account settings so that I have control over the type of promotional content I receive.",
+      "category": "Notifications"
+    },
+    {
+      "title": "Recent In-App Notifications List",
+      "story": "As a user, I want to view a list of recent in-app notifications so that I can catch up on anything I missed and stay up-to-date with app activities.",
+      "category": "Notifications"
+    },
+    {
+      "title": "App Icon Badge Notifications",
+      "story": "As a user, I want to see badge notifications on the app icon so that I can be aware of unread notifications without needing to open the app.",
+      "category": "Notifications"
+    },
+    {
+      "title": "Notification Channel Choices",
+      "story": "As a user, I want to choose which channels (email, SMS, in-app) I receive notifications through so that I can get them in my preferred method, enhancing my user experience.",
+      "category": "Notifications"
+    },
+    {
+      "title": "Admin Targeted User Group Notifications",
+      "story": "As an admin, I need to send targeted notifications to specific user groups based on their behavior or preferences so that communications are more effective and personalized, increasing user engagement.",
+      "category": "Notifications"
+    },
+    {
+      "title": "Keyword-Based Item Search",
+      "story": "As a user, I want to search for specific items using keywords so that I can quickly and efficiently find exactly what I'm looking for.",
+      "category": "Search & Browse"
+    },
+    {
+      "title": "Search Suggestions",
+      "story": "As a user, I wish to receive search suggestions as I type so that I can find items faster and streamline my search experience.",
+      "category": "Search & Browse"
+    },
+    {
+      "title": "Search Result Filters",
+      "story": "As a user, I want to filter search results by various criteria (e.g., date, popularity, relevance) so that I can more easily find the specific item I need among a large set of options.",
+      "category": "Search & Browse"
+    },
+    {
+      "title": "Saved Search Preferences",
+      "story": "As a user, I want to save my search filters or preferences for future searches so that I can enjoy a customized search experience that remembers my preferences.",
+      "category": "Search & Browse"
+    },
+    {
+      "title": "Admin Predefined Search Filters",
+      "story": "As an admin, I want to set up predefined filters for search results based on common user needs so that I can enhance user experience and guide users to what they're most likely looking for.",
+      "category": "Search & Browse"
+    },
+    {
+      "title": "Category/Subcategory Navigation",
+      "story": "As a user, I want to easily navigate through categories and subcategories when browsing items so that I can explore the app's offerings without feeling lost or overwhelmed.",
+      "category": "Search & Browse"
+    },
+    {
+      "title": "Recently Viewed Items Section",
+      "story": "As a user, I want to have a 'recently viewed items' section so that I can quickly go back to items I've looked at before without having to remember or re-search them.",
+      "category": "Search & Browse"
+    },
+    {
+      "title": "Personalized Recommendations",
+      "story": "As a user, I would like to see personalized recommendations based on my search and browsing history so that I can discover new items that align with my interests and preferences.",
+      "category": "Search & Browse"
+    },
+    {
+      "title": "Search and Browsing History Clearing",
+      "story": "As a user, I want the option to clear my search and browsing history for privacy reasons so that I can maintain control over my personal data and its visibility.",
+      "category": "Search & Browse"
+    },
+    {
+      "title": "Admin Search Trend Analysis",
+      "story": "As an admin, I need tools to analyze search trends and user behavior so that I can continuously improve the search feature, making it more effective and user-friendly.",
+      "category": "Search & Browse"
+    },
+    {
+      "title": "Secure Payment Method Addition",
+      "story": "As a user, I want to securely add and save my payment methods (credit card, PayPal, etc.) so that I can facilitate quick and hassle-free transactions.",
+      "category": "Payments"
+    },
+    {
+      "title": "In-App Purchases with Preferred Payment",
+      "story": "As a user, I need to make purchases within the app using my preferred payment method so that my shopping experience is convenient and tailored to my preferences.",
+      "category": "Payments"
+    },
+    {
+      "title": "Payment Confirmation Notification",
+      "story": "As a user, I want to receive immediate confirmation after completing a payment so that I can be reassured that the transaction was successful.",
+      "category": "Payments"
+    },
+    {
+      "title": "Billing Information Update",
+      "story": "As a user, I need to view and update my billing information (like billing address) so that my invoicing details are always accurate and up-to-date.",
+      "category": "Payments"
+    },
+    {
+      "title": "Payment History and Invoice Access",
+      "story": "As a user, I want to access my payment history and download invoices so that I can keep track of my expenditures and maintain personal financial records.",
+      "category": "Payments"
+    },
+    {
+      "title": "Admin Billing Information Management",
+      "story": "As an admin, I need to manage and update billing information for users in case of disputes or errors so that any financial discrepancies can be resolved efficiently.",
+      "category": "Payments"
+    },
+    {
+      "title": "Subscription Service with Auto-Renewal",
+      "story": "As a user, I want to subscribe to services with an option for automatic renewal so that my access to the service is uninterrupted and convenient.",
+      "category": "Payments"
+    },
+    {
+      "title": "Subscription Terms and Conditions Information",
+      "story": "As a user, I need clear information on subscription terms, renewal dates, and cancellation policies so that I can make informed decisions about my subscriptions.",
+      "category": "Payments"
+    },
+    {
+      "title": "Subscription Management Options",
+      "story": "As a user, I want to be able to upgrade, downgrade, or cancel my subscription easily so that I have full control over the services I receive and my expenses.",
+      "category": "Payments"
+    },
+    {
+      "title": "Secure Payment Information Storage",
+      "story": "As a user, I need assurance that my payment information is stored securely and handled confidentially so that my financial data is protected against fraud and misuse.",
+      "category": "Payments"
+    },
+    {
+      "title": "Admin Fraud Detection Measures",
+      "story": "As an admin, I want to implement fraud detection measures to prevent unauthorized transactions so that the integrity of transactions is maintained and users' trust is upheld.",
+      "category": "Payments"
+    },
+    {
+      "title": "Account Suspicious Activity Alerts",
+      "story": "As a user, I want to receive alerts for any suspicious activity on my account so that I can be immediately aware of and respond to potential security breaches.",
+      "category": "Notifications"
+    },
+    {
+      "title": "Refund Request Process",
+      "story": "As a user, I want a straightforward process to request refunds where applicable so that I can get my money back without unnecessary hassle in case of unsatisfactory service.",
+      "category": "Payments"
+    },
+    {
+      "title": "Admin Refund and Dispute Management",
+      "story": "As an admin, I need to handle refund requests and disputes efficiently to maintain customer trust and ensure a positive reputation for the service.",
+      "category": "Payments"
+    },
+    {
+      "title": "Clear Checkout Process with Order Review",
+      "story": "As a user, I want a simple and clear checkout process with the ability to review my order before finalizing so that I can make sure my order is correct and avoid mistakes.",
+      "category": "Payments"
+    },
+    {
+      "title": "Promo Code and Gift Card Usage",
+      "story": "As a user, I want to use promo codes or gift cards at checkout so that I can take advantage of discounts and special offers.",
+      "category": "Payments"
+    },
+    {
+      "title": "Local Currency Pricing and International Payment",
+      "story": "As a user, I want to see prices in my local currency and complete transactions with international payment methods so that I can easily understand and manage my expenses without currency conversion hassles.",
+      "category": "Payments"
+    },
+    {
+      "title": "Admin Compliance with International Tax and Currency",
+      "story": "As an admin, I need to comply with international tax regulations and currency conversion for global transactions so that the business operates legally and efficiently in different markets.",
+      "category": "Payments"
+    },
+    {
+      "title": "Integration of Payment Gateways",
+      "story": "As an admin, I want to integrate reliable and reputable payment gateways into the app for processing transactions so that users can trust the security and reliability of their transactions.",
+      "category": "Payments"
+    },
+    {
+      "title": "Seamless Payment System Integration",
+      "story": "As an admin, I need to ensure seamless integration of the payment system with other parts of the application, like user accounts and order management, so that the overall system works efficiently and error-free.",
+      "category": "Payments"
+    },
+    {
+      "title": "User Role Assignment and Modification",
+      "story": "As an admin, I want to assign and modify user roles so that I can control access to different parts of the application based on the user's responsibilities and needs.",
+      "category": "User Roles"
+    },
+    {
+      "title": "Role-Based Access Controls",
+      "story": "As a user, I want to have access controls based on my role so that I can interact only with the features and data relevant to my position.",
+      "category": "User Roles"
+    },
+    {
+      "title": "Role-Specific Permission Settings",
+      "story": "As an admin, I need to define permission settings for each role so that I can ensure users have appropriate access rights to protect sensitive information.",
+      "category": "User Roles"
+    },
+    {
+      "title": "Role-Based Tailored Interface",
+      "story": "As a user, I want to receive a tailored interface based on my role so that I can have a streamlined and relevant experience with the app.",
+      "category": "User Roles"
+    },
+    {
+      "title": "Central Admin Panel for Role Management",
+      "story": "As an admin, I want to easily manage role assignments in a central admin panel so that I can efficiently handle user access across the application.",
+      "category": "User Roles"
+    },
+    {
+      "title": "User Access Level Understanding",
+      "story": "As a user, I want to understand my access level and permissions so that I am aware of my capabilities and restrictions within the app.",
+      "category": "User Roles"
+    },
+    {
+      "title": "Creation and Management of Role-Specific Permissions",
+      "story": "As an admin, I need to create and manage roles with specific permissions so that I can accurately align app functionalities with user responsibilities.",
+      "category": "User Roles"
+    },
+    {
+      "title": "Admin Role-Based Activity Audit",
+      "story": "As an admin, I want to review and audit role-based activities so that I can ensure compliance with policies and detect any unauthorized or suspicious actions.",
+      "category": "User Roles"
+    },
+    {
+      "title": "User Permission Request and Role Change",
+      "story": "As a user, I want to request additional permissions or a role change so that I can access more features or functionalities as my responsibilities grow or change.",
+      "category": "User Roles"
+    }
+  ]
+}
