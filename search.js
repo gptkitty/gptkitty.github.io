@@ -43,26 +43,40 @@ document.addEventListener('DOMContentLoaded', function() {
 </svg>`;
             card.appendChild(copyIcon);
 
-            // Click event to copy story
-            card.addEventListener('click', function() {
-                const textToCopy = `${storyObj.title}\n\n${storyObj.story}`;
-                if (navigator.clipboard) {
-                    navigator.clipboard.writeText(textToCopy).then(() => {
-                        showToast('Story copied to clipboard!');
-                    }, (err) => {
-                        console.error('Could not copy text: ', err);
-                    });
-                } else {
-                    // Fallback method for older browsers
-                    const textarea = document.createElement('textarea');
-                    textarea.value = textToCopy;
-                    document.body.appendChild(textarea);
-                    textarea.select();
-                    document.execCommand('copy');
-                    textarea.remove();
-                    showToast('Story copied to clipboard! (fallback method)');
-                }
-            });
+        // Click event to copy story with Markdown formatting
+        card.addEventListener('click', function() {
+            // Format the story into Markdown with placeholders
+            const markdownText = `${storyObj.title}\n\nAs a user,\n${formatStory(storyObj.story)}\n\n---\n\n**Acceptance Criteria:**\n\nScenario: \n\`\`\`\nGiven\nWhen\nThen\n\`\`\`\n\nNotes:`;
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(markdownText).then(() => {
+                    showToast('Story copied to clipboard!');
+                }, (err) => {
+                    console.error('Could not copy text: ', err);
+                });
+            } else {
+                // Fallback method for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = markdownText;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                textarea.remove();
+                showToast('Story copied to clipboard! (fallback method)');
+            }
+        });
+
+        // Helper function to format the story in three lines
+        function formatStory(story) {
+            // Split the story into parts and format it into three lines
+            let parts = story.match(/As a (.+), I want (.+) so that (.+)/);
+            if (parts && parts.length === 4) {
+                return `I want ${parts[2]}\nso that ${parts[3]}`;
+            } else {
+                // If the story doesn't match the expected pattern, return it as is
+                return story;
+            }
+        }
 
     // Function to show toast notification
     function showToast(message) {
