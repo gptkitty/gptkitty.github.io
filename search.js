@@ -57,7 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
             card.appendChild(copyIcon);
 
             card.addEventListener('click', function() {
-                const markdownText = `${storyObj.title}\n\nAs a user,\n${formatStory(storyObj.story)}\n\n---\n\n**Acceptance Criteria:**\n\nScenario: \n\`\`\`\nGiven\nWhen\nThen\n\`\`\`\n\nNotes:`;
+                // Format the copied text including the title, formatted story, and placeholders for acceptance criteria
+                const markdownText = `${storyObj.title}\n\n${formatStory(storyObj.story)}\n\n---\n\n**Acceptance Criteria:**\n\nScenario: \n\`\`\`\nGiven\nWhen\nThen\n\`\`\`\n\nNotes:`;
+
                 if (navigator.clipboard) {
                     navigator.clipboard.writeText(markdownText).then(() => {
                         showToast('Story copied to clipboard!');
@@ -65,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         console.error('Could not copy text: ', err);
                     });
                 } else {
+                    // Fallback method for older browsers
                     const textarea = document.createElement('textarea');
                     textarea.value = markdownText;
                     document.body.appendChild(textarea);
