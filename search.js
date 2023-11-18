@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             card.appendChild(content);
 
             const categoryBadge = document.createElement('span');
-            categoryBadge.classList.add('inline-block', 'bg-white-400', 'text-gray-600', 'border-solid', 'border-2', 'border-blue-400', 'px-3', 'py-1', 'text-xs', 'rounded');
+            categoryBadge.classList.add('inline-block', 'text-gray-600', 'border-solid', 'border-2', 'border-blue-400', 'px-3', 'py-1', 'text-xs', 'rounded');
             categoryBadge.textContent = storyObj.category;
             card.appendChild(categoryBadge);
 
